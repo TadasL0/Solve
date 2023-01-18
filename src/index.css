@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (min-width: 600px) {
+/* styles for screens that are 600px or wider */
+}
+
+@media screen and (max-width: 600px) {
+/* styles for screens that are 600px or narrower */
+}
+
+body {
+  background-color: #2f053a;
+  display: flex; /* center the textarea on the page */
+  align-items: center;
+  justify-content: center;
+}
+
+.textareas-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.thought-input {
+  padding: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 105%;
+  max-height: 80%; /* set the max-height of the textbox to be slightly smaller than the viewport height */
+  max-width: calc(100vw - 10%); /* set the max-width of the textbox to be slightly smaller than the viewport width */
+  min-height: 85vh; /* set the minimum height of the textbox, when content is empty */
+  min-width: 70vh; /* set the minimum width of the textbox, when content is empty. Use the 4:3 aspect ratio */
+  height: auto; /* remove the fixed height */
+  width: auto; /* remove the fixed width */
+  overflow: auto;
+  background-color: #ffffff;
+  box-sizing: border-box; /* prevent the textarea from cutting off any text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.left-arrow, .right-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-60%);
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 25px;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 10%;
+}
+
+.right-arrow {
+  right: 10%;
+}
+
+.summary-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
 }
