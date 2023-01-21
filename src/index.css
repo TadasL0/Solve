@@ -56,27 +56,6 @@ body {
   text-shadow: 1px 1px #000000; /* Shadow */
 }
 
-
-.left-arrow, .right-arrow {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-60%);
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 25px;
-  cursor: pointer;
-}
-
-.left-arrow {
-  left: 10%;
-}
-
-.right-arrow {
-  right: 10%;
-}
-
 .summary-textarea {
   position: absolute;
   top: 0;
