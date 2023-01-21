@@ -41,10 +41,8 @@ body {
 
 @media screen and (max-width: 600px) {
   .thought-input {
-    max-height: 100%; /* set the max-height of the textbox to be the same as the viewport height on mobile devices */
-    max-width: 100%; /* set the max-width of the textbox to be the same as the viewport width on mobile devices */
-    min-height: 100%; /* set the minimum height of the textbox to be the same as the viewport height on mobile devices */
-    min-width: 100%; /* set the minimum width of the textbox to be the same as the viewport width on mobile devices */
+    width: 100%; /* set the width of the textarea to 100% of the viewport width on mobile devices */
+    height: 100%; /* set the height of the textarea to 100% of the viewport height on mobile devices */
   }
 }
 
