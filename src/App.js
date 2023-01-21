@@ -6,14 +6,6 @@ function TextArea() {
   const [textboxes, setTextboxes] = useState([{ date: new Date().toDateString(), content: "" }]);
   const [currentTextbox, setCurrentTextbox] = useState(0);
   const [inputText, setInputText] = useState("");
-
-  useEffect(() => {
-    const currentDate = new Date().toDateString();
-    const lastTextbox = textboxes[textboxes.length - 1];
-    if (!lastTextbox || lastTextbox.date !== currentDate) {
-      setTextboxes([...textboxes, { date: currentDate, content: "" }]);
-    }
-  }, []);
   
   const [summaryText, setSummaryText] = useState('');
   const [showSummary, setShowSummary] = useState(false);
