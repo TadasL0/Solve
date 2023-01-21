@@ -41,7 +41,7 @@ body {
 
 @media screen and (max-width: 600px) {
   .thought-input {
-    width: 100%; /* set the width of the textarea to 100% of the viewport width on mobile devices */
+    width: 60%; /* set the width of the textarea to 100% of the viewport width on mobile devices */
     height: 100%; /* set the height of the textarea to 100% of the viewport height on mobile devices */
   }
 }
