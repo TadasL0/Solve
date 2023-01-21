@@ -43,6 +43,8 @@ body {
   justify-content: center;
   margin: 0 auto;
   background-color: #370942;
+  text-decoration: none;
+  resize: none;
 }
 
 .thought-input:focus {
