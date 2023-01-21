@@ -51,6 +51,13 @@ body {
   outline: none;
 }
 
+.thought-input:placeholder {
+  color: #c0c0c0; /* Light gray color */
+  font-style: italic;
+  text-shadow: 1px 1px #000000; /* Shadow */
+}
+
+
 .left-arrow, .right-arrow {
   position: fixed;
   top: 50%;
