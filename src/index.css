@@ -4,14 +4,6 @@ html, body {
   overflow: hidden;
 }
 
-@media screen and (min-width: 600px) {
-/* styles for screens that are 600px or wider */
-}
-
-@media screen and (max-width: 600px) {
-/* styles for screens that are 600px or narrower */
-}
-
 body {
   background-color: #19021f;
   display: flex; /* center the textarea on the page */
@@ -45,6 +37,15 @@ body {
   background-color: #370942;
   text-decoration: none;
   resize: none;
+}
+
+@media screen and (max-width: 600px) {
+  .thought-input {
+    max-height: 100%; /* set the max-height of the textbox to be the same as the viewport height on mobile devices */
+    max-width: 100%; /* set the max-width of the textbox to be the same as the viewport width on mobile devices */
+    min-height: 100%; /* set the minimum height of the textbox to be the same as the viewport height on mobile devices */
+    min-width: 100%; /* set the minimum width of the textbox to be the same as the viewport width on mobile devices */
+  }
 }
 
 .thought-input:focus {
