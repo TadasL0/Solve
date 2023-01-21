@@ -45,6 +45,10 @@ body {
   background-color: #370942;
 }
 
+.thought-input:focus {
+  outline: none;
+}
+
 .left-arrow, .right-arrow {
   position: fixed;
   top: 50%;
