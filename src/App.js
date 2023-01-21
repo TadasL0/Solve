@@ -36,9 +36,41 @@ function TextArea() {
   const handleCloseSummary = () => {
     setShowSummary(false);
   };
+  const LeftArrow = () => (
+    <button className="left-arrow" onClick={() => {
+      if (currentTextbox > textboxes.length + 1) {
+        setCurrentTextbox(currentTextbox - 1);
+      }
+    }}>
+      {"<"}
+    </button>
+  );
+
+  const RightArrow = () => (
+    <button className="right-arrow" onClick={() => {
+      if (currentTextbox < textboxes.length - 1) {
+        setCurrentTextbox(currentTextbox + 1);
+      }
+    }}>
+      {">"}
+    </button>
+  );
   
   return (
     <div className="textareas-container">
+      <LeftArrow disabled={currentTextbox === 0} />
+      <textarea
+        id="main-textarea"
+        className="thought-input"
+        value={inputText}
+        onChange={event => {
+          setInputText(event.target.value);
+          const newTextboxes = [...textboxes];
+          newTextboxes[currentTextbox].content = event.target.value;
+          setTextboxes(newTextboxes);
+        }}
+      ></textarea>
+      <RightArrow disabled={currentTextbox === textboxes.length - 1} />
       <button className="generate-summary-button" onClick={generateSummary}>
         Generate Summary
       </button>
