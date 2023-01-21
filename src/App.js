@@ -5,8 +5,7 @@ import './index.css';
 function TextArea() {
   const [textboxes, setTextboxes] = useState([{ date: new Date().toDateString(), content: "" }]);
   const [currentTextbox, setCurrentTextbox] = useState(0);
-  const [summaryText, setSummaryText] = useState('');
-  const [showSummary, setShowSummary] = useState(false);
+  const [inputText, setInputText] = useState("");
 
   useEffect(() => {
     const currentDate = new Date().toDateString();
@@ -15,7 +14,10 @@ function TextArea() {
       setTextboxes([...textboxes, { date: currentDate, content: "" }]);
     }
   }, []);
-
+  
+  const [summaryText, setSummaryText] = useState('');
+  const [showSummary, setShowSummary] = useState(false);
+  
   const generateSummary = async () => {
     const inputText = textboxes[currentTextbox].content;
     const selectedQuestion = getRandomQuestion(inputText);
@@ -24,23 +26,34 @@ function TextArea() {
   };
 
   const generateProbe = async () => {
-    const selectedQuestion = getRandomQuestion(textboxes[currentTextbox].content);
+    const selectedQuestion = getRandomQuestion(inputText);
+    setInputText(inputText + '\n' + selectedQuestion);
     const newTextboxes = [...textboxes];
-    newTextboxes[currentTextbox].content = newTextboxes[currentTextbox].content + '\n' + selectedQuestion;
+    newTextboxes[currentTextbox].content = inputText + '\n' + selectedQuestion;
     setTextboxes(newTextboxes);
   };
 
+  const handleCloseSummary = () => {
+    setShowSummary(false);
+  };
+  
   return (
     <div className="textareas-container">
       <button className="generate-summary-button" onClick={generateSummary}>
         Generate Summary
       </button>
-      <button className="generate-probe-button" onClick={generateProbe}>
-        Generate Probe
-      </button>
+      <button className="generate-probe-button" onClick={() => {
+    const selectedQuestion = getRandomQuestion(inputText);
+    setInputText(inputText + selectedQuestion);
+}}>
+  Generate Probe
+</button>
       <div className={`summary-container ${showSummary ? 'slide-in' : ''}`}>
         <textarea className="summary-textarea" value={summaryText} readOnly />
-        <button className={`close-summary-button ${showSummary ? 'show' : 'hide'}`} onClick={() => setShowSummary(false)}>
+        <button
+          className={`close-summary-button ${showSummary ? 'show' : 'hide'}`}
+          onClick={handleCloseSummary}
+        >
           Close Summary
         </button>
       </div>
