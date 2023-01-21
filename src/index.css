@@ -25,6 +25,7 @@ body {
 }
 
 .thought-input {
+  color: white;
   padding: 5%;
   font-family: 'Roboto', sans-serif;
   font-size: 105%;
