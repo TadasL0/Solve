@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  background-color: #2f053a;
+  background-color: #19021f;
   display: flex; /* center the textarea on the page */
   align-items: center;
   justify-content: center;
@@ -41,6 +41,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  background-color: #19021f;
 }
 
 .left-arrow, .right-arrow {
