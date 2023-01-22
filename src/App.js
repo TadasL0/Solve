@@ -5,7 +5,12 @@ function TextArea() {
   const [textboxes, setTextboxes] = useState([{ date: new Date().toDateString(), content: "" }]);
   const [currentTextbox, setCurrentTextbox] = useState(0);
   const [inputText, setInputText] = useState("");
-  
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  const handleChatbotClick = () => {
+    setShowChatbot(!showChatbot);
+  }
+
   return (
     <div className="textareas-container">
       <textarea
@@ -19,6 +24,9 @@ function TextArea() {
           setTextboxes(newTextboxes);
         }}
       ></textarea>
+      <div className="chatbot-icon-container" onClick={handleChatbotClick}>
+        <img src={chatbotIcon} alt="Chatbot Icon" className={`chatbot-icon ${showChatbot ? 'show' : 'hide'}`} />
+      </div>
     </div>
   );
 }
