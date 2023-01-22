@@ -72,3 +72,7 @@ body {
   height: 50px;
   cursor: pointer;
 }
+
+.textareas-container {
+  padding-top: 60px; /* adjust this value to match the height of the Navbar */
+}
