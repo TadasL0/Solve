@@ -1,0 +1,49 @@
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f1f1f1;
+  }
+  
+  .navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .plus-icon {
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .navbar-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-container.open {
+    overflow: visible;
+  }
+  
+  .navbar-container.closed {
+    overflow: hidden;
+  }
+  
+  .navbar-item {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
