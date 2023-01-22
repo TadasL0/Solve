@@ -10,25 +10,6 @@ function TextArea() {
   const [summaryText, setSummaryText] = useState('');
   const [showSummary, setShowSummary] = useState(false);
   
-  const generateSummary = async () => {
-    const inputText = textboxes[currentTextbox].content;
-    const selectedQuestion = getRandomQuestion(inputText);
-    setSummaryText(selectedQuestion);
-    setShowSummary(true);
-  };
-
-  const generateProbe = async () => {
-    const selectedQuestion = getRandomQuestion(inputText);
-    setInputText(inputText + '\n' + selectedQuestion);
-    const newTextboxes = [...textboxes];
-    newTextboxes[currentTextbox].content = inputText + '\n' + selectedQuestion;
-    setTextboxes(newTextboxes);
-  };
-
-  const handleCloseSummary = () => {
-    setShowSummary(false);
-  };
-  
   return (
     <div className="textareas-container">
       <textarea
@@ -42,24 +23,6 @@ function TextArea() {
           setTextboxes(newTextboxes);
         }}
       ></textarea>
-      <button className="generate-summary-button" onClick={generateSummary}>
-        Generate Summary
-      </button>
-      <button className="generate-probe-button" onClick={() => {
-    const selectedQuestion = getRandomQuestion(inputText);
-    setInputText(inputText + selectedQuestion);
-}}>
-  Generate Probe
-</button>
-      <div className={`summary-container ${showSummary ? 'slide-in' : ''}`}>
-        <textarea className="summary-textarea" value={summaryText} readOnly />
-        <button
-          className={`close-summary-button ${showSummary ? 'show' : 'hide'}`}
-          onClick={handleCloseSummary}
-        >
-          Close Summary
-        </button>
-      </div>
     </div>
   );
 }

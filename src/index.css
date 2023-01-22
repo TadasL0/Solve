@@ -56,11 +56,3 @@ body {
   text-shadow: 1px 1px #000000; /* Shadow */
 }
 
-.summary-textarea {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(-100%);
-  transition: transform 0.5s ease-in-out;
-}
