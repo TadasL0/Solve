@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getRandomQuestion } from './questions.js'
 import './index.css';
 
 function TextArea() {
   const [textboxes, setTextboxes] = useState([{ date: new Date().toDateString(), content: "" }]);
   const [currentTextbox, setCurrentTextbox] = useState(0);
   const [inputText, setInputText] = useState("");
-  
-  const [summaryText, setSummaryText] = useState('');
-  const [showSummary, setShowSummary] = useState(false);
   
   return (
     <div className="textareas-container">
