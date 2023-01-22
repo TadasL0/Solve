@@ -25,7 +25,7 @@ function TextArea() {
         }}
       ></textarea>
       <div className={`chatbot-icon-container ${showChatbot ? 'show' : 'hide'}`} onClick={handleChatbotClick}>
-        <img src="https://explorefiles.s3.amazonaws.com/chatbot_icon.jpg" alt="Chatbot Icon" className="chatbot-icon" />
+        <img src="images\chatbot_icon.jpg" alt="Chatbot Icon" className="chatbot-icon" />
       </div>
     </div>
   );
