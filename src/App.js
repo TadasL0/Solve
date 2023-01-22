@@ -24,8 +24,8 @@ function TextArea() {
           setTextboxes(newTextboxes);
         }}
       ></textarea>
-      <div className="chatbot-icon-container" onClick={handleChatbotClick}>
-        <img src={chatbotIcon} alt="Chatbot Icon" className={`chatbot-icon ${showChatbot ? 'show' : 'hide'}`} />
+      <div className={`chatbot-icon-container ${showChatbot ? 'show' : 'hide'}`} onClick={handleChatbotClick}>
+        <img src="./images/chatbot_icon.jpg" alt="Chatbot Icon" className="chatbot-icon" />
       </div>
     </div>
   );

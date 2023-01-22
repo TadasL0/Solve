@@ -56,16 +56,19 @@ body {
   text-shadow: 1px 1px #000000; /* Shadow */
 }
 
-.chatbot-icon {
+.chatbot-icon-container {
   position: absolute;
   bottom: 0;
   right: 0;
+  display: none;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.chatbot-icon-container.show {
+  display: block;
 }
+
 .chatbot-icon {
-  animation: spin 2s infinite linear;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
