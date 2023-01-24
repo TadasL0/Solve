@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SideNavbar from './ui_navbar.js';
 import './index.css';
 
 function TextArea() {
-  const [textboxes, setTextboxes] = useState([{ date: new Date().toDateString(), content: "" }]);
   const [inputText, setInputText] = useState("");
   const [showChatbot, setShowChatbot] = useState(false);
 
@@ -14,19 +13,15 @@ function TextArea() {
   return (
     <div>
     <SideNavbar /> 
-    <div className="textareas-container">
+    <div className="textarea-container">
       <textarea
         id="main-textarea"
         className="thought-input"
         value={inputText}
-        onChange={event => {
-          setInputText(event.target.value);
-          const newTextboxes = [...textboxes];
-          setTextboxes(newTextboxes);
-        }}
+        onChange={event => setInputText(event.target.value)}
       ></textarea>
       <div className={`chatbot-icon-container ${showChatbot ? 'show' : 'hide'}`} onClick={handleChatbotClick}>
-        <img src="src\Bobber.png" alt="Chatbot Icon" className="chatbot-icon" />
+        <img src="images\chatbot_icon.jpg" alt="Chatbot Icon" className="chatbot-icon" />
       </div>
     </div>
     </div>

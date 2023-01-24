@@ -15,9 +15,9 @@ const SideNavbar = () => {
         </div>
       </div>
       <div className={`navbar-container ${isOpen ? 'open' : 'closed'}`}>
-        <div className="navbar-item">Diary Entry</div>
-        <div className="navbar-item">Diary Entry</div>
-        <div className="navbar-item">Diary Entry</div>
+        <div className="navbar-item" contentEditable={true}>Diary Entry</div>
+        <div className="navbar-item" contentEditable={true}>Diary Entry</div>
+        <div className="navbar-item" contentEditable={true}>Diary Entry</div>
       </div>
     </div>
   );
